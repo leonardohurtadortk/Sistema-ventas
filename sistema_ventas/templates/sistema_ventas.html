@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+-----------------
+
+
+Mesa 1
+- []
+- [Cobrar]
+- []
+
+Mesa 2
+- [Agregar Pedido]
+- [Cobrar]
+- [Ver Detalles]
+
+Mesa 3
+- [Agregar Pedido]
+
+Herramientas
+------------
+- [Configurar Calculadora]
+- [Hacer Caja]
+
+
+{% block content %}
+
+
+
+
+
+<div class="tablero_mesa">
+
+    <h2>Tablero</h2>
+    <p>Resumen del Día</p>
+    <hr>
+    <p>Número total de mesas: {{ num_total_mesas }}</p>
+    <p>Número de mesas ocupadas: {{ num_mesas_ocupadas }}</p>
+    <p>numero de pedidos pendientes: {{p_pendientes}}</p>
+    <p>ventas totales del día: {{p_dia}} </p>
+</div>
+<br>
+<br>
+
+<div class="cabecera_mesas">
+    <h2>Gestión de Mesas</h2>
+
+    <div>
+        <a href="{% url 'configurar' %}" class="boton_principal">Configurar</a>
+
+        <a href="" class="boton_principal">Calculadora</a>
+
+        <a href="" class="boton_principal">Hacer caja</a>
+
+    </div>
+</div>
+<p>Aquí puedes gestionar las mesas, agregar pedidos y realizar cobros.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel_mesas">
+
+
+    {% for mesa in mesas %}
+
+
+
+
+    <div class="mesas">
+
+        {% if mesa.disponible == False %}
+        <p class=""> Mesa {{mesa.numero}}</p>
+        <a href="{% url 'agregar_pedidos' mesa.numero %}" class="boton_principal">Agregar Pedido</a>
+        <a href="{% url 'cobrar_pedidos' mesa.numero %}" class="boton_principal">Cobrar</a>
+
+        <a href="{% url 'ver_detalles' mesa.numero %}" class="boton_principal">Detalles</a>
+        {% else %}
+        <p> Mesa {{mesa.numero}}</p>
+        <p class="texto_verde"> (Disponible)</p>
+        <a href="{% url 'agregar_pedidos' mesa.numero %}" class="boton_principal">Agregar Pedido</a>
+        <a href="{% url 'ver_detalles' mesa.numero %}" class="boton_principal">Detalles</a>
+
+
+        {% endif %}
+
+
+    </div>
+    {% endfor %}
+
+</div>
+
+
+
+{% endblock %}

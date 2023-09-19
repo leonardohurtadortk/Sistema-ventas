@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+
+<br>
+<br>
+<br>
+
+<div class="formulario_editar">
+
+
+
+    <form method="POST" class="">
+        {% csrf_token %}
+
+        <div class="imagen_formulario">
+            <img class="imagen_logotipo" src="{% static 'imagenes/logo_imagen.png' %}" alt="">
+            <h1 class="">Iniciar</h1>
+
+
+        </div>
+
+        <div class="texto_verde">
+            {{error}}
+        </div>
+
+        <div>
+            <label for="username">
+                <h2>Nombre</h2>
+            </label>
+            <input type="text" name="username" id="username" placeholder="Ingrese el nombre se usuario">
+
+            <label for="password1">
+                <h2>Contraseña</h2>
+            </label>
+            <input type="password" name="password1" id="password1" placeholder="Ingrese la contraseña">
+
+            <label for="password2">
+                <h2>Repeat</h2>
+            </label>
+            <input type="password" name="password2" id="password2" placeholder="Repita la contraseña">
+
+
+
+            <div class="boton">
+                <button class="boton_principal">
+                    Registrarse
+                </button>
+                <a class="boton_principal" href="">Iniciar</a>
+            </div>
+
+        </div>
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

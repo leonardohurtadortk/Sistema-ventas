@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<h1>Agregar productos</h1>
+
+<form action="" method="POST">
+
+    {{form_mesas.error}}
+    {% csrf_token %}
+
+    {{form_mesas.as_p}}
+
+<button class="boton_principal">Agregar</button>
+</form>
+
+{% endblock %}

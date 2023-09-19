@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+
+
+<h1>Detalles del Pedido</h1>
+<hr>
+
+<p>Mesa: {{mesas}}</p>
+<p>Estado: {% if mesas.disponible %} Disponible
+    {% else %} Ocupada {% endif %}</p>
+{% for pedido in pedidos.all %}
+<hr>
+<br>
+<h2>Pedido {{pedido.id}}</h2>
+    {% for comida in pedido.comida.all %}
+<p>Comida: {{comida.nombre}}</p>
+
+<p>Costo del producto: {{comida.precio}}€</p>
+    {% endfor %}
+    <p>Cantidad: {{pedido.comida_cantidad}}</p>
+
+    {% for bebida in pedido.bebida.all %}
+<p>Bebidas: {{bebida}}</p>
+
+<p>Costo del producto: {{bebida.precio}}€</p>
+
+    {% endfor %}
+    <p>Catidad: {{pedido.bebida_cantidad}}</p>
+
+
+<p>Total del Pedido: {{pedido.total}}€</p>
+
+
+
+<h2>Estado del Pedido</h2>
+{% if pedido.estado %}
+<h1>Realizado</h1>
+{% else %}
+<h1>En preparación</h1>
+
+
+
+
+{% endif %}
+
+<h2>Hora del Pedido</h2>
+<p>{{pedido.fecha}}</p>
+
+
+
+<a href="" class="boton_principal">Crear factura</a>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

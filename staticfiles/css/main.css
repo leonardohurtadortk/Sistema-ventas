@@ -1,0 +1,173 @@
+html{
+
+background: #010409;
+color: white;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.texto_verde{
+color: green;
+}
+.contenido_menu{
+background: black;
+border: 1px solid white;
+}
+.nav_main{
+display: flex;
+max-width: 1250px;
+width: 90%;
+margin: 20px auto;
+justify-content: space-between;
+
+}
+
+.nav_menu {
+display: flex;
+list-style: none;
+margin: 0 0 0 20px;
+
+}
+
+.nav_menu li a{
+text-decoration: none;
+color: white;
+padding: 0 10px 0 10px;
+}
+
+.contenido{
+
+max-width: 1250px;
+margin: 30px auto;
+width: 95%;
+}
+
+
+
+.boton_principal{
+background: black;
+border: 1px solid white;
+color: white;
+text-decoration: none;
+padding: 5px 10px 5px 10px;
+border-radius: 10%;
+margin: 10px 0;
+}
+
+
+
+
+
+
+.tablero_mesa{
+
+    background: black;
+    border: 1px solid gray;
+    padding: 10px 10px 10px 10px;
+}
+
+
+.tablero_mesa hr{
+margin: 0 0 10px 0;
+border: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.cabecera_mesas{
+background: black;
+padding: 20px 10px 20px 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+border: 1px solid gray;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.panel_mesas{
+background: black;
+display: grid;
+grid-template-columns: 280px 280px 280px 280px;
+gap: 1em;
+align-items: center;
+justify-content: center;
+margin: 30px 0 0 0;
+padding: 25px 0 25px 0;
+
+}
+
+
+
+
+.mesas{
+    background-image: url("static/mesa_dos.jpg");
+background-size: cover;
+border: 1px solid gray;
+text-align: center;
+border-radius: 20%;
+margin: 5px 5px 5px 5px;
+padding: 25px 0 25px 0;
+}
+
+.mesas p {
+margin: 0 0 20px 0;
+}
+
+.mesas:hover{
+
+    border: 1px solid white;
+}
+
+
+
+
+
+
+
+
+.config_panel_mesas .config_mesas{
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 20%;
+    margin: 5px 5px 5px 5px;
+    padding: 25px 0 25px 0;
+   
+}
+
+
+
+.config_panel_mesas .config_mesas p{
+
+   margin: 0 0 20px 0;
+}

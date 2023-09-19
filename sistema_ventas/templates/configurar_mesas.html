@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+
+<h1>Configuracion sistema de ventas - mesas</h1>
+
+<p>Aquí puedes agregar, eliminar o modificar las mesas en tu sistema. Para hacerlo, sigue estos pasos: </p>
+<br>
+   <p> Haz clic en “Numero” para crear una nueva mesa. </p>
+    <p> Haz clic en “Guardar” para añadir la mesa a tu sistema. </p>
+    <br>
+    <p> Si necesitas eliminar o modificar una mesa existente, simplemente selecciona la mesa de la lista y haz clic en “Eliminar” o “Modificar”.</p>
+<br>
+    <h2>Agregar mesa</h2>
+<div class="form_mesas">
+    <form action="" method="POST">
+        <p class="texto_verde">{{error_message}}</p>
+        {% csrf_token %}
+        
+        {{form}}
+        <button class="boton_principal">Guardar</button>
+
+    </form>
+</div>
+<br>
+<h2>Todas las mesas</h2>
+<p>Numero total de mesas: {{num_mesas}}</p>
+
+{% for mesa in mesas %}
+<div class="config_panel_mesas">
+    <div class="config_mesas">
+        <p>{{mesa}}</p>
+
+  
+  
+        <a href="{% url 'eliminar' mesa.id %}" class="boton_principal">Eliminar</a>
+    </div>
+</div>
+{% endfor %}
+
+
+
+{% endblock %}

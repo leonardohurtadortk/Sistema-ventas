@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h1>Configuracion sistema de ventas</h1>
+<p>En esta sección, puedes personalizar tu sistema de ventas para satisfacer las necesidades de tu negocio. Aquí encontrarás opciones para configurar las mesas, establecer privilegios de usuario y dar de alta a nuevos trabajadores.</p>
+<br>
+<a href="{% url 'configurar_mesas' %}" class="boton_principal">Configurar mesas</a>
+<a href="{% url 'configurar_mesas' %}" class="boton_principal">Configurar privilegios</a>
+<a href="{% url 'configurar_mesas' %}" class="boton_principal">Dar de alta a trabajadores</a>
+
+
+<br>
+<br>
+<h2>Configurar privilegios</h2>
+<p>En esta sección, puedes establecer los roles y privilegios de los usuarios en tu sistema. Por defecto, solo el administrador puede hacer cambios en el sistema. Sin embargo, puedes otorgar permisos a otros usuarios para que puedan agregar o quitar mesas y productos.</p>
+
+<br>
+<h2>Dar de alta a trabajadores</h2>
+
+<p>Para dar de alta a un nuevo trabajador en tu sistema, sigue estos pasos:</p>
+<p>Haz clic en “Agregar trabajador”.</p>
+<p>Rellena el formulario con la información del trabajador.</p>
+<p>Haz clic en “Guardar” para añadir al trabajador a tu sistema.</p>
+<p>Recuerda que solo los usuarios con los privilegios adecuados pueden dar de alta a nuevos trabajadores.</p>
+
+
+
+{% endblock %}

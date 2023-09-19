@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% for pedido in pedidos %}
+{% if pedido.estado == False %}
+
+<h1>Procesar Pago</h1>
+
+<h2>Resumen del Pedido:</h2>
+
+    {% for comida in pedido.comida.all %}
+        <div class="pedido-item">
+            <h3>Producto: {{comida}}</h3>
+            <p>Precio unitario: {{comida.precio}}€</p>
+            <p>Cantidad: {{pedido.comida_cantidad}}</p>
+            <p>Costo total: {{pedido.costo_comida}} €</p>
+        </div>
+        <hr>
+    {% endfor %}
+    {% for bebida in pedido.bebida.all %}
+    <div class="pedido-item">
+        <h3>Producto: {{bebida}}</h3>
+        <p>Precio unitario: {{bebida.precio}}€</p>
+        <p>Cantidad: {{pedido.bebida_cantidad}}</p>
+        <p>Costo total: {{pedido.costo_bebidas}} €</p>
+    </div>
+    <hr>
+{% endfor %}
+
+
+
+
+
+
+
+{% endif %}
+{% endfor %}
+
+
+
+<div class="total">
+    <h2>Total a Pagar: {{mesas.total_mesa}}€</h2>
+</div>
+<a href="{% url 'realizar_cobro' mesas.numero %}" class="boton_principal">Procesar pago</a>
+
+
+
+
+
+
+
+{% endblock %}
+
+
+

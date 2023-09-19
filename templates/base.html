@@ -1,0 +1,54 @@
+
+{% load static %}
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>Sistema de ventas</title>
+</head>
+<body>
+    <div class="contenido_menu">
+        <nav class="nav_main">
+            <p>Sistema de ventas</p>
+            <ul class="nav_menu">
+                <li><a href="">Inicio</a></li>
+         
+                <li><a href="">Blog</a></li>
+           
+                <li><a href="">Productos</a></li>
+         
+                <li>
+                        <a href="{% url 'sistema' %}">Sistema de ventas</a>
+                </li>
+         
+                <li><a href="{% url 'perfil' %}">Perfil</a></li>
+     
+                <li><a href="">Productos</a></li>
+       
+                <li>
+                        <a href="">Carta</a>
+                </li>
+            </ul>
+    </nav>
+    </div>
+    <main class="contenido">
+        {% block content %}
+
+
+        {% endblock %}
+    </main>
+    
+</body>
+</html>
