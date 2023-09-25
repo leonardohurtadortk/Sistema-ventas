@@ -4,6 +4,6 @@ from django.shortcuts import render
 
 
 def inicio(request):
-    ejemplo = "hola mundo"
+    ejemplo = "ho"
     dof="ccc"
     return render (request,"inicio.html")
