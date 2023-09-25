@@ -5,5 +5,5 @@ from django.shortcuts import render
 
 def inicio(request):
     ejemplo = "hola mundo"
-    dof="ccc"
+    dof="cccyuyuyu"
     return render (request,"inicio.html")
